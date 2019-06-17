@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.lwjgl.input.Keyboard;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
@@ -37,6 +38,10 @@ public class SoundSystemReloader {
             } else {
                 Minecraft.getMinecraft().player.sendStatusMessage(new TextComponentString("Unable to reload sound system, it is not loaded").setStyle(RED_STYLE), true);
             }
+            // Reset F3 menu state
+            Minecraft.getMinecraft().gameSettings.showDebugInfo = !Minecraft.getMinecraft().gameSettings.showDebugInfo;
+            Minecraft.getMinecraft().gameSettings.showDebugProfilerChart = Minecraft.getMinecraft().gameSettings.showDebugInfo && GuiScreen.isShiftKeyDown();
+            Minecraft.getMinecraft().gameSettings.showLagometer = Minecraft.getMinecraft().gameSettings.showDebugInfo && GuiScreen.isAltKeyDown();
         }
     }
 
