@@ -1,0 +1,16 @@
+[
+{
+  "modid": "soundsystemreloader",
+  "name": "Sound System Reloader",
+  "description": "This mod adds an F3+S shortcut to reload the sound system",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["its_meow"],
+  "credits": "its_meow, for programming and idea",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
